@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FdB-mq-nqd">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Restaurant List Table View Controller-->
+        <scene sceneID="0XO-tM-F0H">
+            <objects>
+                <tableViewController id="v0D-lg-u4S" customClass="RestaurantListTableViewController" customModule="RestaurantFinderChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MNR-mi-6iR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="VEK-VP-g8w">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osw-E0-2p6">
+                                    <rect key="frame" x="8" y="8" width="304" height="28"/>
+                                    <state key="normal" title="Find Nearby Restaurants"/>
+                                    <connections>
+                                        <action selector="findNearbyRestaurantsButtonTapped:" destination="v0D-lg-u4S" eventType="touchUpInside" id="oAC-aE-zCI"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="osw-E0-2p6" firstAttribute="top" secondItem="VEK-VP-g8w" secondAttribute="topMargin" id="67p-ia-WwI"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="osw-E0-2p6" secondAttribute="bottom" id="X8U-kU-Vby"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="osw-E0-2p6" secondAttribute="trailing" id="cdP-Y9-EAW"/>
+                                <constraint firstItem="osw-E0-2p6" firstAttribute="leading" secondItem="VEK-VP-g8w" secondAttribute="leadingMargin" id="ibp-Ge-8FT"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantCell" textLabel="y8v-C0-Bgz" style="IBUITableViewCellStyleDefault" id="zWX-AD-Hh3">
+                                <rect key="frame" x="0.0" y="136" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zWX-AD-Hh3" id="gOS-h2-uiL">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y8v-C0-Bgz">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="b9y-4u-jwL" kind="show" id="qud-gK-Ieo">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="v0D-lg-u4S" id="CKR-MM-Yu2"/>
+                            <outlet property="delegate" destination="v0D-lg-u4S" id="4IC-2r-POu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="fMe-xI-L5H"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RSU-XB-LCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146" y="132"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="7pt-EW-8Ec">
+            <objects>
+                <viewController id="b9y-4u-jwL" customClass="MapViewController" customModule="RestaurantFinderChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zgW-ij-qUA"/>
+                        <viewControllerLayoutGuide type="bottom" id="cjy-aY-oyc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rgw-Kw-gkG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fcq-J0-47R">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <connections>
+                                    <outlet property="delegate" destination="b9y-4u-jwL" id="r11-fh-fRG"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cjy-aY-oyc" firstAttribute="top" secondItem="fcq-J0-47R" secondAttribute="bottom" id="Q4q-Cn-l3n"/>
+                            <constraint firstItem="fcq-J0-47R" firstAttribute="top" secondItem="zgW-ij-qUA" secondAttribute="bottom" id="hVe-om-irf"/>
+                            <constraint firstAttribute="trailing" secondItem="fcq-J0-47R" secondAttribute="trailing" id="ui6-MB-dld"/>
+                            <constraint firstItem="fcq-J0-47R" firstAttribute="leading" secondItem="Rgw-Kw-gkG" secondAttribute="leading" id="xN6-ea-bad"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="fcq-J0-47R" id="WKg-d6-ND2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVo-1N-4kD" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="540" y="132"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SKz-rJ-ywU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FdB-mq-nqd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="svQ-gL-8ex">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="v0D-lg-u4S" kind="relationship" relationship="rootViewController" id="XkT-U2-Uoc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cW-oj-255" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-240" y="132"/>
+        </scene>
+    </scenes>
+</document>
